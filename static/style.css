@@ -1,0 +1,1278 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+
+.topbar {
+
+    width: 100%;
+
+    min-height: 140px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050505 0%,
+            #101010 50%,
+            #050505 100%
+        );
+
+    border-bottom: 3px solid #e50000;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 10px 30px;
+
+    gap: 25px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* líneas rojas decorativas */
+
+.topbar::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 4px;
+
+    background: #e00000;
+
+    top: 0;
+
+    left: -40px;
+
+    transform: rotate(-25deg);
+
+    box-shadow: 0 15px 0 #e00000;
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-area {
+
+    width: 390px;
+
+    min-width: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.logo-area img {
+
+    width: 330px;
+
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================
+   MENÚ
+========================================= */
+
+.menu {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex: 1;
+
+}
+
+.menu a {
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    padding: 15px 0;
+
+    position: relative;
+
+    transition: 0.25s;
+
+}
+
+.menu a i {
+
+    margin-right: 7px;
+
+    font-size: 16px;
+
+}
+
+.menu a:hover {
+
+    color: #ff1717;
+
+}
+
+.menu a.active {
+
+    color: #ff1010;
+
+}
+
+.menu a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    height: 3px;
+
+    background: #ff1010;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 3px;
+
+}
+
+
+/* =========================================
+   CONTACTO
+========================================= */
+
+.contacto {
+
+    border-left: 2px solid #e00000;
+
+    padding-left: 20px;
+
+    min-width: 230px;
+
+}
+
+.whatsapp {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+}
+
+.whatsapp i {
+
+    color: #22c55e;
+
+    font-size: 27px;
+
+}
+
+.direccion {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+}
+
+.direccion i {
+
+    color: #ff1111;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================
+   REDES
+========================================= */
+
+.redes {
+
+    min-width: 190px;
+
+    text-align: center;
+
+}
+
+.redes > span {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    margin-bottom: 10px;
+
+}
+
+.social-icons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+.social-icons a {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    font-size: 19px;
+
+    text-decoration: none;
+
+    transition: 0.25s;
+
+}
+
+.social-icons a:nth-child(1) {
+
+    background: linear-gradient(
+        45deg,
+        #f9ce34,
+        #ee2a7b,
+        #6228d7
+    );
+
+}
+
+.social-icons a:nth-child(2) {
+
+    background: #1877f2;
+
+}
+
+.social-icons a:nth-child(3) {
+
+    background: #ff0000;
+
+}
+
+.social-icons a:nth-child(4) {
+
+    background: #111;
+
+    border: 1px solid #555;
+
+}
+
+.social-icons a:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+/* =========================================
+   HERO PRINCIPAL
+========================================= */
+
+.hero {
+
+    width: 100%;
+
+    min-height: 700px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #050505;
+
+}
+
+
+/* =========================================
+   IZQUIERDA - CARRO
+========================================= */
+
+.presentacion {
+
+    min-height: 700px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.imagen-carro {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 700px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.imagen-carro::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.05),
+            rgba(0,0,0,0.15)
+        );
+
+}
+
+.imagen-carro img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+}
+
+
+/* =========================================
+   TEXTO SOBRE CARRO
+========================================= */
+
+.texto-carro {
+
+    position: absolute;
+
+    z-index: 5;
+
+    top: 75px;
+
+    left: 50px;
+
+}
+
+.texto-carro h1 {
+
+    font-size: clamp(40px, 4vw, 70px);
+
+    line-height: 0.95;
+
+    font-weight: 900;
+
+    font-style: italic;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        4px 4px 0 #000,
+        0 0 15px #000;
+
+}
+
+.texto-carro h1 span {
+
+    color: #b8ff00;
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+}
+
+.texto-carro h1::after {
+
+    content: "";
+
+    display: block;
+
+    width: 300px;
+
+    height: 7px;
+
+    background: #ed0000;
+
+    transform: skew(-30deg) rotate(-4deg);
+
+    margin-top: 15px;
+
+}
+
+
+/* =========================================
+   FORMULARIO FACTURA
+========================================= */
+
+.factura {
+
+    margin: 30px;
+
+    padding: 30px;
+
+    border: 1px solid #e00000;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #050505,
+            #0c0f11
+        );
+
+    box-shadow:
+        0 0 25px rgba(255,0,0,0.08),
+        inset 0 0 30px rgba(255,0,0,0.025);
+
+    align-self: center;
+
+}
+
+
+/* =========================================
+   HEADER FACTURA
+========================================= */
+
+.factura-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #303030;
+
+    margin-bottom: 20px;
+
+}
+
+.icono-factura {
+
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #ff1010;
+
+    font-size: 43px;
+
+}
+
+.factura-header h2 {
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    margin-bottom: 7px;
+
+}
+
+.factura-header h2 span {
+
+    color: #ff1010;
+
+}
+
+.factura-header p {
+
+    color: #cccccc;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.seccion {
+
+    margin-bottom: 18px;
+
+}
+
+.titulo-seccion {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+
+}
+
+.titulo-seccion i {
+
+    color: #ff1111;
+
+    font-size: 25px;
+
+}
+
+.titulo-seccion h3 {
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================
+   GRID FORMULARIO
+========================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+.campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+.campo label {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+.campo label b {
+
+    color: #ff0000;
+
+}
+
+.campo input {
+
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 13px;
+
+    background: #10181c;
+
+    border: 1px solid #40505a;
+
+    border-radius: 6px;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+
+}
+
+.campo input:focus {
+
+    border-color: #ff1111;
+
+    box-shadow: 0 0 8px rgba(255,0,0,0.15);
+
+}
+
+.campo input::placeholder {
+
+    color: #75818a;
+
+}
+
+
+/* =========================================
+   TABLA SERVICIOS
+========================================= */
+
+.tabla-servicios {
+
+    width: 100%;
+
+}
+
+.cabecera-servicio {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(160px, 1fr)
+        150px
+        170px
+        42px;
+
+    gap: 10px;
+
+    padding: 0 5px 8px;
+
+    border-bottom: 1px solid #303030;
+
+    color: #eeeeee;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+.cabecera-servicio b {
+
+    color: #ff1111;
+
+}
+
+.servicio-row {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(160px, 1fr)
+        150px
+        170px
+        42px;
+
+    gap: 10px;
+
+    padding: 10px 5px;
+
+    border-bottom: 1px solid #303030;
+
+}
+
+.servicio-row input {
+
+    height: 38px;
+
+    width: 100%;
+
+    background: #10181c;
+
+    border: 1px solid #40505a;
+
+    border-radius: 6px;
+
+    padding: 0 10px;
+
+    color: white;
+
+    outline: none;
+
+}
+
+.servicio-row input:focus {
+
+    border-color: #ff0000;
+
+}
+
+.eliminar {
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #282828;
+
+    color: #ff1111;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+
+}
+
+.eliminar:hover {
+
+    background: #ff1111;
+
+    color: white;
+
+}
+
+
+/* =========================================
+   AGREGAR SERVICIO
+========================================= */
+
+.agregar {
+
+    margin-top: 12px;
+
+    padding: 8px 13px;
+
+    background: transparent;
+
+    border: 1px solid #777;
+
+    color: white;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+.agregar:hover {
+
+    border-color: #ff0000;
+
+    color: #ff0000;
+
+}
+
+
+/* =========================================
+   BOTÓN FACTURA
+========================================= */
+
+.boton-factura {
+
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #df0000,
+            #ff1717
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+}
+
+.boton-factura i {
+
+    margin-right: 10px;
+
+}
+
+.boton-factura:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(255,0,0,0.25);
+
+}
+
+
+/* =========================================
+   SERVICIOS INFERIORES
+========================================= */
+
+.servicios-footer {
+
+    min-height: 100px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050505,
+            #0b0b0b
+        );
+
+    border-top: 2px solid #e00000;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    padding: 18px 35px;
+
+}
+
+.servicio-item {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 0 20px;
+
+    border-right: 1px solid #e00000;
+
+}
+
+.servicio-item:last-child {
+
+    border-right: none;
+
+}
+
+.servicio-item > i {
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+.servicio-item strong {
+
+    display: block;
+
+    font-size: 13px;
+
+}
+
+.servicio-item small {
+
+    display: block;
+
+    color: #aaa;
+
+    margin-top: 5px;
+
+    font-style: italic;
+
+}
+
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 1400px) {
+
+    .topbar {
+
+        gap: 15px;
+
+        padding: 10px 20px;
+
+    }
+
+    .logo-area {
+
+        width: 270px;
+
+        min-width: 230px;
+
+    }
+
+    .logo-area img {
+
+        width: 250px;
+
+    }
+
+    .menu {
+
+        gap: 14px;
+
+    }
+
+    .menu a {
+
+        font-size: 13px;
+
+    }
+
+    .contacto {
+
+        min-width: 200px;
+
+    }
+
+    .redes {
+
+        min-width: 150px;
+
+    }
+
+    .factura {
+
+        margin: 20px;
+
+        padding: 22px;
+
+    }
+
+    .factura-header h2 {
+
+        font-size: 34px;
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .topbar {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+    .logo-area {
+
+        width: 100%;
+
+    }
+
+    .menu {
+
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 5px;
+
+    }
+
+    .contacto {
+
+        border-left: none;
+
+    }
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .presentacion {
+
+        min-height: 500px;
+
+    }
+
+    .imagen-carro {
+
+        min-height: 500px;
+
+    }
+
+    .factura {
+
+        max-width: 900px;
+
+        width: calc(100% - 40px);
+
+        margin: 25px auto;
+
+    }
+
+    .servicios-footer {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+
+    }
+
+    .servicio-item {
+
+        border-right: none;
+
+        border-bottom: 1px solid #e00000;
+
+        padding-bottom: 15px;
+
+    }
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+    .topbar {
+
+        padding: 15px;
+
+    }
+
+    .logo-area img {
+
+        width: 240px;
+
+    }
+
+    .contacto {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+    .whatsapp,
+
+    .direccion {
+
+        justify-content: center;
+
+    }
+
+    .redes {
+
+        width: 100%;
+
+    }
+
+    .menu {
+
+        gap: 20px;
+
+    }
+
+    .hero {
+
+        display: block;
+
+    }
+
+    .presentacion {
+
+        min-height: 400px;
+
+    }
+
+    .imagen-carro {
+
+        min-height: 400px;
+
+    }
+
+    .texto-carro {
+
+        top: 35px;
+
+        left: 25px;
+
+    }
+
+    .texto-carro h1 {
+
+        font-size: 42px;
+
+    }
+
+    .factura {
+
+        width: calc(100% - 20px);
+
+        margin: 10px auto 20px;
+
+        padding: 17px;
+
+    }
+
+    .factura-header h2 {
+
+        font-size: 30px;
+
+    }
+
+    .factura-header p {
+
+        font-size: 12px;
+
+    }
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .cabecera-servicio {
+
+        grid-template-columns:
+            1fr
+            90px
+            120px
+            40px;
+
+    }
+
+    .servicio-row {
+
+        grid-template-columns:
+            1fr
+            90px
+            120px
+            40px;
+
+    }
+
+    .servicios {
+
+        overflow-x: auto;
+
+    }
+
+    .tabla-servicios {
+
+        min-width: 500px;
+
+    }
+
+    .boton-factura {
+
+        font-size: 12px;
+
+    }
+
+    .servicios-footer {
+
+        grid-template-columns: 1fr;
+
+        padding: 15px;
+
+    }
+
+}

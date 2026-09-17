@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Miller Cars Tuning - Facturación</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<!-- =========================
+     BARRA SUPERIOR
+========================= -->
+
+<header class="topbar">
+
+    <div class="logo-area">
+        <img src="{{ url_for('static', filename='logo.png') }}"
+             alt="Miller Cars Tuning">
+    </div>
+
+    <nav class="menu">
+
+        <a href="/" class="active">
+            <i class="fa-solid fa-house"></i>
+            Inicio
+        </a>
+
+       
+
+
+        </a>
+<a href="/garantias">
+    🛡️ Garantías
+</a>
+        <a href="/facturas">
+            <i class="fa-solid fa-file-lines"></i>
+            Historial
+        </a>
+
+    </nav>
+
+    <div class="contacto">
+
+        <div class="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <strong>301 614 4438</strong>
+        </div>
+
+        <div class="direccion">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>
+                Carrera 18 calle 3A 27<br>
+                Barrio Eduardo Santos
+            </span>
+        </div>
+
+    </div>
+
+    <div class="redes">
+
+        <span>Síguenos en nuestras redes</span>
+
+        <div class="social-icons">
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     CONTENIDO PRINCIPAL
+========================= -->
+
+<main class="hero">
+
+    <!-- =========================
+         LADO IZQUIERDO
+    ========================= -->
+
+    <section class="presentacion">
+
+        <div class="imagen-carro">
+
+           <img src="{{ url_for('static', filename='logo.png') }}"
+     alt="Miller Cars Tuning">
+
+            <div class="texto-carro">
+
+                <h1>
+                    TU VEHÍCULO,
+                    <br>
+                    <span>TU ESTILO</span>
+                </h1>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LADO DERECHO
+    ========================= -->
+
+    <section class="factura">
+
+        <div class="factura-header">
+
+            <div class="icono-factura">
+                <i class="fa-solid fa-file-invoice"></i>
+            </div>
+
+            <div>
+                <h2>
+                    Crear <span>Factura</span>
+                </h2>
+
+                <p>
+                    Personaliza tu factura y envíala al correo de tu cliente
+                </p>
+            </div>
+
+        </div>
+
+
+        <form method="POST">
+
+
+            <!-- CLIENTE -->
+
+            <div class="seccion">
+
+                <div class="titulo-seccion">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <h3>Cliente</h3>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="campo">
+
+                        <label>
+                            Nombre <b>*</b>
+                        </label>
+
+                        <input
+                            type="text"
+                            name="cliente"
+                            placeholder="Ej: Juan Pérez"
+                            required>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label>
+                            Correo electrónico <b>*</b>
+                        </label>
+
+                        <input
+                            type="email"
+                            name="correo"
+                            placeholder="Ej: cliente@gmail.com"
+                            required>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label>
+                            Teléfono
+                        </label>
+
+                        <input
+                            type="text"
+                            name="telefono"
+                            placeholder="Ej: 3001234567">
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label>
+                            Placa <b>*</b>
+                        </label>
+
+                        <input
+                            type="text"
+                            name="placa"
+                            placeholder="Ej: ABC123"
+                            required>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label>
+                            Marca / modelo <b>*</b>
+                        </label>
+
+                        <input
+                            type="text"
+                            name="vehiculo"
+                            placeholder="Ej: Chevrolet Onix"
+                            required>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label>
+                            Descuento (%)
+                        </label>
+
+                        <input
+                            type="number"
+                            name="descuento"
+                            value="0"
+                            min="0"
+                            step="0.01">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICIOS -->
+
+            <div class="seccion servicios">
+
+                <div class="titulo-seccion">
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    <h3>Servicios / productos</h3>
+
+                </div>
+
+
+                <div class="tabla-servicios">
+
+                    <div class="cabecera-servicio">
+
+                        <span>Descripción <b>*</b></span>
+
+                        <span>Cantidad <b>*</b></span>
+
+                        <span>Precio <b>*</b></span>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <div id="lista-servicios">
+
+                        <div class="servicio-row">
+
+                            <input
+                                type="text"
+                                name="descripcion[]"
+                                placeholder="Ej: Instalación de luces"
+                                required>
+
+
+                            <input
+                                type="number"
+                                name="cantidad[]"
+                                value="1"
+                                min="0.01"
+                                step="0.01"
+                                required>
+
+
+                            <input
+                                type="number"
+                                name="precio[]"
+                                placeholder="$ 0"
+                                min="0"
+                                step="1"
+                                required>
+
+
+                            <button
+                                type="button"
+                                class="eliminar"
+                                onclick="eliminarServicio(this)">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="agregar"
+                    onclick="agregarServicio()">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Agregar servicio
+
+                </button>
+
+            </div>
+
+
+            <!-- BOTÓN -->
+
+            <button type="submit" class="boton-factura">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                GENERAR PDF Y ENVIAR AL CORREO
+
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     SERVICIOS INFERIORES
+========================= -->
+
+<section class="servicios-footer">
+
+    <div class="servicio-item">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <div>
+            <strong>PERSONALIZACIÓN DE UNIDADES</strong>
+            <small>Tu vehículo, tu estilo</small>
+        </div>
+
+    </div>
+
+
+    <div class="servicio-item">
+
+        <i class="fa-solid fa-gear"></i>
+
+        <div>
+            <strong>MODIFICACIÓN Y STOPS</strong>
+            <small>Más estilo, más actitud</small>
+        </div>
+
+    </div>
+
+
+    <div class="servicio-item">
+
+        <i class="fa-solid fa-volume-high"></i>
+
+        <div>
+            <strong>SISTEMAS DE SONIDO</strong>
+            <small>Multimedia y confort</small>
+        </div>
+
+    </div>
+
+
+    <div class="servicio-item">
+
+        <i class="fa-solid fa-spring"></i>
+
+        <div>
+            <strong>SUSPENSIÓN Y COMPRESORES</strong>
+            <small>Rendimiento sin límites</small>
+        </div>
+
+    </div>
+
+
+    <div class="servicio-item">
+
+        <i class="fa-solid fa-circle-dot"></i>
+
+        <div>
+            <strong>RINES Y LLANTAS</strong>
+            <small>El agarre perfecto</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function agregarServicio() {
+
+    const lista = document.getElementById("lista-servicios");
+
+    const fila = document.createElement("div");
+
+    fila.className = "servicio-row";
+
+    fila.innerHTML = `
+
+        <input
+            type="text"
+            name="descripcion[]"
+            placeholder="Ej: Instalación de luces"
+            required>
+
+        <input
+            type="number"
+            name="cantidad[]"
+            value="1"
+            min="0.01"
+            step="0.01"
+            required>
+
+        <input
+            type="number"
+            name="precio[]"
+            placeholder="$ 0"
+            min="0"
+            step="1"
+            required>
+
+        <button
+            type="button"
+            class="eliminar"
+            onclick="eliminarServicio(this)">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+    `;
+
+    lista.appendChild(fila);
+}
+
+
+function eliminarServicio(boton) {
+
+    const filas = document.querySelectorAll(".servicio-row");
+
+    if (filas.length > 1) {
+
+        boton.parentElement.remove();
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

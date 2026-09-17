@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Clientes y Garantías | Miller Cars Tuning</title>
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+            --rojo: #e50914;
+            --rojo-oscuro: #b80710;
+            --negro: #0b0b0b;
+            --gris-fondo: #f4f5f7;
+            --gris: #6b7280;
+            --borde: #e5e7eb;
+            --blanco: #ffffff;
+            --verde: #16a34a;
+            --naranja: #f59e0b;
+        }
+
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--gris-fondo);
+            color: #111827;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            min-height: 76px;
+
+            padding: 10px 35px;
+
+            background: var(--negro);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            box-shadow:
+                0 4px 20px rgba(0,0,0,.25);
+        }
+
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .logo-area img {
+            width: auto;
+            height: 55px;
+            max-width: 230px;
+            object-fit: contain;
+        }
+
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+
+        .menu a {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            color: #fff;
+            text-decoration: none;
+
+            padding: 11px 15px;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: .2s ease;
+        }
+
+
+        .menu a:hover {
+            background: #222;
+        }
+
+
+        .menu a.active {
+            background: var(--rojo);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #050505,
+                    #171717
+                );
+
+            padding: 48px 20px 42px;
+
+            color: white;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            right: -100px;
+            top: -150px;
+
+            border-radius: 50%;
+
+            background: rgba(229,9,20,.15);
+        }
+
+
+        .hero-content {
+            width: 94%;
+            max-width: 1400px;
+
+            margin: auto;
+
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .hero h1 {
+            margin: 0;
+
+            font-size: 40px;
+            line-height: 1.1;
+
+            letter-spacing: -.5px;
+        }
+
+
+        .hero h1 span {
+            color: var(--rojo);
+        }
+
+
+        .hero p {
+            margin: 12px 0 0;
+
+            color: #cfcfcf;
+
+            font-size: 15px;
+        }
+
+
+        .hero-line {
+            width: 65px;
+            height: 4px;
+
+            background: var(--rojo);
+
+            margin-top: 20px;
+
+            border-radius: 20px;
+        }
+
+
+        /* =====================================================
+           CONTENEDOR
+        ===================================================== */
+
+        .container {
+            width: 94%;
+            max-width: 1400px;
+
+            margin: 30px auto 60px;
+        }
+
+
+        /* =====================================================
+           ESTADISTICAS
+        ===================================================== */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .stat {
+            background: var(--blanco);
+
+            border: 1px solid var(--borde);
+
+            border-radius: 12px;
+
+            padding: 22px;
+
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,.05);
+
+            transition: .2s;
+        }
+
+
+        .stat:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 22px rgba(0,0,0,.08);
+        }
+
+
+        .stat-icon {
+            width: 52px;
+            height: 52px;
+
+            flex-shrink: 0;
+
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #fef2f2;
+
+            font-size: 24px;
+        }
+
+
+        .stat h3 {
+            margin: 0 0 5px;
+
+            font-size: 12px;
+
+            color: var(--gris);
+
+            letter-spacing: .5px;
+        }
+
+
+        .stat strong {
+            font-size: 30px;
+            line-height: 1;
+        }
+
+
+        /* =====================================================
+           TARJETAS
+        ===================================================== */
+
+        .card {
+            background: var(--blanco);
+
+            border: 1px solid var(--borde);
+
+            border-radius: 13px;
+
+            padding: 28px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,.05);
+        }
+
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 25px;
+
+            padding-bottom: 18px;
+
+            border-bottom: 1px solid var(--borde);
+        }
+
+
+        .card-title {
+            margin: 0;
+
+            font-size: 21px;
+        }
+
+
+        .card-title span {
+            color: var(--rojo);
+        }
+
+
+        .card-subtitle {
+            margin: 5px 0 0;
+
+            color: var(--gris);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           SECCIONES FORMULARIO
+        ===================================================== */
+
+        .form-section {
+            margin-bottom: 27px;
+        }
+
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 16px;
+
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+
+        .section-number {
+            width: 28px;
+            height: 28px;
+
+            border-radius: 50%;
+
+            background: var(--rojo);
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 12px;
+        }
+
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .campo.full {
+            grid-column: 1 / -1;
+        }
+
+
+        .campo label {
+            margin-bottom: 7px;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            color: #374151;
+        }
+
+
+        .campo input,
+        .campo select,
+        .campo textarea {
+            width: 100%;
+
+            padding: 12px 13px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 7px;
+
+            background: white;
+
+            color: #111827;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: .2s;
+        }
+
+
+        .campo input:focus,
+        .campo select:focus,
+        .campo textarea:focus {
+            border-color: var(--rojo);
+
+            box-shadow:
+                0 0 0 3px rgba(229,9,20,.08);
+        }
+
+
+        .campo textarea {
+            min-height: 90px;
+
+            resize: vertical;
+        }
+
+
+        .campo input::placeholder,
+        .campo textarea::placeholder {
+            color: #9ca3af;
+        }
+
+
+        /* =====================================================
+           BOTONES
+        ===================================================== */
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+
+            padding-top: 5px;
+        }
+
+
+        .btn {
+            border: 0;
+
+            padding: 12px 20px;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+
+        .btn-primary {
+            background: var(--rojo);
+            color: white;
+        }
+
+
+        .btn-primary:hover {
+            background: var(--rojo-oscuro);
+
+            transform: translateY(-1px);
+        }
+
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+
+            border: 1px solid #e5e7eb;
+        }
+
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+
+        /* =====================================================
+           BUSQUEDA
+        ===================================================== */
+
+        .toolbar {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .search-box {
+            position: relative;
+
+            flex: 1;
+        }
+
+
+        .search-box span {
+            position: absolute;
+
+            left: 14px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            font-size: 17px;
+        }
+
+
+        .buscador {
+            width: 100%;
+
+            padding: 14px 15px 14px 43px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            outline: none;
+        }
+
+
+        .buscador:focus {
+            border-color: var(--rojo);
+
+            box-shadow:
+                0 0 0 3px rgba(229,9,20,.08);
+        }
+
+
+        .filtro {
+            min-width: 180px;
+
+            padding: 14px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 8px;
+
+            background: white;
+
+            font-size: 14px;
+
+            outline: none;
+        }
+
+
+        /* =====================================================
+           TABLA
+        ===================================================== */
+
+        .tabla-container {
+            width: 100%;
+
+            overflow-x: auto;
+
+            border: 1px solid var(--borde);
+
+            border-radius: 9px;
+        }
+
+
+        table {
+            width: 100%;
+
+            min-width: 1150px;
+
+            border-collapse: collapse;
+        }
+
+
+        thead th {
+            background: #111827;
+
+            color: white;
+
+            padding: 14px 13px;
+
+            text-align: left;
+
+            font-size: 11px;
+
+            letter-spacing: .3px;
+
+            white-space: nowrap;
+        }
+
+
+        tbody td {
+            padding: 14px 13px;
+
+            border-bottom: 1px solid #edf0f2;
+
+            font-size: 13px;
+
+            vertical-align: middle;
+        }
+
+
+        tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+
+        tbody tr:hover {
+            background: #fafafa;
+        }
+
+
+        .cliente-nombre {
+            font-weight: 800;
+
+            color: #111827;
+        }
+
+
+        .cliente-correo {
+            margin-top: 3px;
+
+            font-size: 11px;
+
+            color: #6b7280;
+        }
+
+
+        .placa {
+            display: inline-block;
+
+            padding: 5px 9px;
+
+            background: #f3f4f6;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 5px;
+
+            font-weight: 800;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .factura {
+            color: var(--rojo);
+
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           ESTADOS
+        ===================================================== */
+
+        .estado {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+
+            padding: 6px 10px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+
+        .vigente {
+            color: #08752c;
+
+            background: #dcfce7;
+        }
+
+
+        .vencida {
+            color: #b00000;
+
+            background: #fee2e2;
+        }
+
+
+        /* =====================================================
+           BOTON ELIMINAR
+        ===================================================== */
+
+        .btn-eliminar {
+            width: 34px;
+            height: 34px;
+
+            border: 0;
+
+            border-radius: 6px;
+
+            background: #f3f4f6;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            transition: .2s;
+        }
+
+
+        .btn-eliminar:hover {
+            background: #fee2e2;
+
+            transform: scale(1.05);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #080808;
+
+            color: white;
+
+            padding: 35px 20px;
+
+            text-align: center;
+        }
+
+
+        footer strong {
+            color: var(--rojo);
+
+            font-size: 18px;
+        }
+
+
+        footer p {
+            margin: 8px 0 0;
+
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           MENSAJES FLASH
+        ===================================================== */
+
+        .flash-container {
+            width: 94%;
+            max-width: 1400px;
+
+            margin: 20px auto 0;
+        }
+
+
+        .flash {
+            padding: 13px 16px;
+
+            border-radius: 8px;
+
+            margin-bottom: 10px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+        }
+
+
+        .flash.ok {
+            background: #dcfce7;
+
+            color: #166534;
+
+            border: 1px solid #bbf7d0;
+        }
+
+
+        .flash.error {
+            background: #fee2e2;
+
+            color: #991b1b;
+
+            border: 1px solid #fecaca;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .topbar {
+                padding: 10px 20px;
+            }
+
+            .menu a {
+                padding: 10px;
+            }
+
+            .form-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 750px) {
+
+            .topbar {
+                flex-direction: column;
+
+                gap: 12px;
+
+                padding: 14px;
+            }
+
+            .menu {
+                width: 100%;
+
+                justify-content: center;
+
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                padding: 35px 18px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .card-header {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .campo.full {
+                grid-column: auto;
+            }
+
+            .toolbar {
+                flex-direction: column;
+            }
+
+            .search-box,
+            .filtro {
+                width: 100%;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .form-actions .btn {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="topbar">
+
+    <div class="logo-area">
+
+        <img
+            src="{{ url_for('static', filename='logo.png') }}"
+            alt="Miller Cars Tuning">
+
+    </div>
+
+
+    <nav class="menu">
+
+        <a href="/">
+            🏠 Inicio
+        </a>
+
+        <a href="/garantias"
+           class="active">
+            🛡️ Garantías
+        </a>
+<a href="/facturas">
+            <i class="fa-solid fa-file-lines"></i>
+            Historial
+        </a>
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            CLIENTES &
+            <span>GARANTÍAS</span>
+        </h1>
+
+        <p>
+            Administración de clientes, servicios y garantías
+            de Miller Cars Tuning.
+        </p>
+
+        <div class="hero-line"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MENSAJES
+===================================================== -->
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+    {% if messages %}
+
+        <div class="flash-container">
+
+            {% for category, message in messages %}
+
+                <div class="flash {{ category }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% endif %}
+
+{% endwith %}
+
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     ESTADISTICAS
+===================================================== -->
+
+<section class="stats">
+
+
+    <div class="stat">
+
+        <div class="stat-icon">
+            👥
+        </div>
+
+        <div>
+
+            <h3>
+                TOTAL REGISTROS
+            </h3>
+
+            <strong>
+                {{ clientes|length }}
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-icon">
+            🟢
+        </div>
+
+        <div>
+
+            <h3>
+                GARANTÍAS VIGENTES
+            </h3>
+
+            <strong>
+                {{ clientes|selectattr("estado", "equalto", "Vigente")|list|length }}
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-icon">
+            🔴
+        </div>
+
+        <div>
+
+            <h3>
+                GARANTÍAS VENCIDAS
+            </h3>
+
+            <strong>
+                {{ clientes|selectattr("estado", "equalto", "Vencida")|list|length }}
+            </strong>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     REGISTRAR GARANTÍA
+===================================================== -->
+
+<section class="card">
+
+
+    <div class="card-header">
+
+        <div>
+
+            <h2 class="card-title">
+                ➕ Registrar
+                <span>garantía</span>
+            </h2>
+
+            <p class="card-subtitle">
+                Registra los datos del cliente y el periodo
+                de garantía del servicio.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <form method="POST">
+
+
+        <!-- CLIENTE -->
+
+        <div class="form-section">
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    1
+                </span>
+
+                Información del cliente
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label>
+                        NOMBRE DEL CLIENTE *
+                    </label>
+
+                    <input
+                        type="text"
+                        name="cliente"
+                        placeholder="Nombre completo"
+                        required>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        CORREO ELECTRÓNICO
+                    </label>
+
+                    <input
+                        type="email"
+                        name="correo"
+                        placeholder="cliente@email.com">
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        TELÉFONO
+                    </label>
+
+                    <input
+                        type="text"
+                        name="telefono"
+                        placeholder="+57 300 000 0000">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- VEHICULO -->
+
+        <div class="form-section">
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    2
+                </span>
+
+                Información del vehículo
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label>
+                        PLACA
+                    </label>
+
+                    <input
+                        type="text"
+                        name="placa"
+                        placeholder="ABC123"
+                        style="text-transform:uppercase">
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        VEHÍCULO
+                    </label>
+
+                    <input
+                        type="text"
+                        name="vehiculo"
+                        placeholder="Marca y modelo">
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        N.º DE FACTURA
+                    </label>
+
+                    <select name="factura_numero">
+
+                        <option value="">
+                            Seleccionar factura
+                        </option>
+
+                        {% for factura in facturas %}
+
+                        <option value="{{ factura.numero }}">
+
+                            {{ factura.numero }}
+                            — {{ factura.cliente }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SERVICIO -->
+
+        <div class="form-section">
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    3
+                </span>
+
+                Servicio realizado
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="campo full">
+
+                    <label>
+                        SERVICIO
+                    </label>
+
+                    <input
+                        type="text"
+                        name="servicio"
+                        placeholder="Ej: Modificación de stop, luces, unidad, etc.">
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        FECHA DEL SERVICIO
+                    </label>
+
+                    <input
+                        type="date"
+                        name="fecha_servicio">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GARANTIA -->
+
+        <div class="form-section">
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    4
+                </span>
+
+                Periodo de garantía
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label>
+                        INICIO DE GARANTÍA
+                    </label>
+
+                    <input
+                        type="date"
+                        name="fecha_inicio">
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        VENCIMIENTO *
+                    </label>
+
+                    <input
+                        type="date"
+                        name="fecha_vencimiento"
+                        required>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OBSERVACIONES -->
+
+        <div class="form-section">
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    5
+                </span>
+
+                Observaciones
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="campo full">
+
+                    <textarea
+                        name="observaciones"
+                        placeholder="Escribe aquí cualquier detalle importante de la garantía..."></textarea>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="form-actions">
+
+            <button
+                type="reset"
+                class="btn btn-secondary">
+
+                Limpiar
+
+            </button>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+
+                🛡️ Registrar garantía
+
+            </button>
+
+        </div>
+
+
+    </form>
+
+</section>
+
+
+
+<!-- =====================================================
+     LISTADO DE CLIENTES
+===================================================== -->
+
+<section class="card">
+
+
+    <div class="card-header">
+
+        <div>
+
+            <h2 class="card-title">
+                📋 Agenda de
+                <span>garantías</span>
+            </h2>
+
+            <p class="card-subtitle">
+                Consulta y controla todos los registros.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- BUSCADOR -->
+
+    <div class="toolbar">
+
+
+        <div class="search-box">
+
+            <span>
+                🔎
+            </span>
+
+            <input
+                type="text"
+                id="buscar"
+                class="buscador"
+                placeholder="Buscar cliente, placa, vehículo, factura o servicio...">
+
+        </div>
+
+
+        <select
+            id="filtroEstado"
+            class="filtro">
+
+            <option value="todos">
+                Todos los estados
+            </option>
+
+            <option value="Vigente">
+                🟢 Vigentes
+            </option>
+
+            <option value="Vencida">
+                🔴 Vencidas
+            </option>
+
+        </select>
+
+
+    </div>
+
+
+
+    <!-- TABLA -->
+
+    <div class="tabla-container">
+
+        <table id="tabla">
+
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        CLIENTE
+                    </th>
+
+                    <th>
+                        TELÉFONO
+                    </th>
+
+                    <th>
+                        VEHÍCULO
+                    </th>
+
+                    <th>
+                        PLACA
+                    </th>
+
+                    <th>
+                        FACTURA
+                    </th>
+
+                    <th>
+                        SERVICIO
+                    </th>
+
+                    <th>
+                        VENCIMIENTO
+                    </th>
+
+                    <th>
+                        ESTADO
+                    </th>
+
+                    <th>
+                        ACCIÓN
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+                {% for cliente in clientes %}
+
+                <tr>
+
+
+                    <td>
+
+                        <div class="cliente-nombre">
+
+                            {{ cliente.cliente }}
+
+                        </div>
+
+                        {% if cliente.correo %}
+
+                        <div class="cliente-correo">
+
+                            {{ cliente.correo }}
+
+                        </div>
+
+                        {% endif %}
+
+                    </td>
+
+
+                    <td>
+
+                        {{ cliente.telefono or "-" }}
+
+                    </td>
+
+
+                    <td>
+
+                        {{ cliente.vehiculo or "-" }}
+
+                    </td>
+
+
+                    <td>
+
+                        {% if cliente.placa %}
+
+                        <span class="placa">
+
+                            {{ cliente.placa }}
+
+                        </span>
+
+                        {% else %}
+
+                        -
+
+                        {% endif %}
+
+                    </td>
+
+
+                    <td>
+
+                        {% if cliente.factura_numero %}
+
+                        <span class="factura">
+
+                            {{ cliente.factura_numero }}
+
+                        </span>
+
+                        {% else %}
+
+                        -
+
+                        {% endif %}
+
+                    </td>
+
+
+                    <td>
+
+                        {{ cliente.servicio or "-" }}
+
+                    </td>
+
+
+                    <td>
+
+                        {{ cliente.fecha_vencimiento or "-" }}
+
+                    </td>
+
+
+                    <td>
+
+
+                        {% if cliente.estado == "Vigente" %}
+
+                        <span class="estado vigente">
+
+                            ● Vigente
+
+                        </span>
+
+                        {% else %}
+
+                        <span class="estado vencida">
+
+                            ● Vencida
+
+                        </span>
+
+                        {% endif %}
+
+
+                    </td>
+
+
+                    <td>
+
+                        <form
+                            method="POST"
+                            action="/garantias/eliminar/{{ cliente.id }}"
+                            onsubmit="return confirm('¿Seguro que deseas eliminar esta garantía?');">
+
+                            <button
+                                type="submit"
+                                class="btn-eliminar"
+                                title="Eliminar garantía">
+
+                                🗑️
+
+                            </button>
+
+                        </form>
+
+                    </td>
+
+
+                </tr>
+
+
+                {% else %}
+
+                <tr>
+
+                    <td
+                        colspan="9"
+                        style="
+                            text-align:center;
+                            padding:50px;
+                            color:#6b7280;
+                        ">
+
+                        <div style="font-size:35px;">
+                            🛡️
+                        </div>
+
+                        <strong>
+                            No hay garantías registradas
+                        </strong>
+
+                        <div style="margin-top:5px;">
+                            Los registros aparecerán aquí.
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <strong>
+        MILLER CARS TUNING
+    </strong>
+
+    <p>
+        Modificación de unidades y stops
+        •
+        Personalizaciones Tuning
+    </p>
+
+    <p>
+        Bogotá • Pedidos y cotizaciones
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const buscar =
+    document.getElementById("buscar");
+
+const filtroEstado =
+    document.getElementById("filtroEstado");
+
+const filas =
+    document.querySelectorAll(
+        "#tabla tbody tr"
+    );
+
+
+function filtrarTabla() {
+
+    const texto =
+        buscar.value.toLowerCase().trim();
+
+    const estadoSeleccionado =
+        filtroEstado.value;
+
+
+    filas.forEach(function(fila) {
+
+        const contenido =
+            fila.textContent.toLowerCase();
+
+
+        let coincideTexto =
+            contenido.includes(texto);
+
+
+        let coincideEstado = true;
+
+
+        if (
+            estadoSeleccionado !== "todos"
+        ) {
+
+            const textoFila =
+                fila.textContent;
+
+
+            coincideEstado =
+                textoFila.includes(
+                    estadoSeleccionado
+                );
+
+        }
+
+
+        if (
+            coincideTexto &&
+            coincideEstado
+        ) {
+
+            fila.style.display = "";
+
+        } else {
+
+            fila.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+buscar.addEventListener(
+    "input",
+    filtrarTabla
+);
+
+
+filtroEstado.addEventListener(
+    "change",
+    filtrarTabla
+);
+
+</script>
+
+
+</body>
+
+</html>
